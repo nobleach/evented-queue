@@ -2,7 +2,7 @@
 Evented-queue
 =============
 
-A queue implementation that fires events when items are enqueued/dequeued
+A queue implementation that fires events when items are enqueued, dequeued or when the queue is empty.
 
 I wanted to build a system that would publish an event whenever a an item was enqueued or dequeued from a standard queue. Of course this is fairly trivial, but it's something I find myself using time and time again.
 
@@ -18,7 +18,7 @@ Right now, the Event-queue system is extremely simple. Just add the script to yo
 
 You may start enqueueing items with
 
-    var item = *Obj/String/Num*;
+    var item = Object/String/Number;
     myEventedQueue.enqueue(item);
     
 If you have an existing array of items you'd like to enqueue, you can use
