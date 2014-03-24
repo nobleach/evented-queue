@@ -17,7 +17,7 @@ Right now, the Event-queue system is extremely simple. Just add the script to yo
 
 You may start enqueueing items with
 
-    var item = Object/Array/String/Num;
+    var item = Object/Array/String/Number;
     myEventedQueue.enqueue(item);
 
 **Note:** When enqueing an array, it will be added just like any other type. It's constituent components will not be added one by one.
@@ -44,7 +44,7 @@ Here's where the fun begins. Perhaps you want to fire an event every time an ite
 
 Currently no additional information is returned.
 
-To attach and event any time an item is dequeued, the process is similar:
+To attach an event any time an item is dequeued, the process is similar:
 
     myEventedQueue.addEventListener('itemdequeued', function () { ... }, false);
 
