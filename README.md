@@ -9,7 +9,7 @@ I wanted to build a system that would emit an event whenever a an item was enque
 
 When an item is enqueued, a "itemenqueued" event is emitted. Any listners are informed and can fire an event as a result. The same is true for dequeueing of items. An "itemdequeued" event is fired. (although I don't see this being used as much). A "queueemptied" event can alert listeners when the queue has no more items.
 
-##Adding items to the EventedQueue
+##Adding items to an EventedQueue
 
 Right now, the EventedQueue system is extremely simple. Just add the script to your page and instantiate an instance of EventedQueue:
 
