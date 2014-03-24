@@ -1,4 +1,3 @@
-
 Evented-queue
 =============
 
@@ -49,3 +48,9 @@ To attach and event any time an item is dequeued, the process is similar:
     myEventedQueue.addEventListener('itemdequeued', function () { ... }, false);
 
 If dequeueing items leads to an empty queue, EventedQueue emits a 'queueemptied' event.
+
+    myEventedQueue.addEventListener('queueemptied', function() {
+      console.log('Yay! our work here is done!'); 
+    }, false);
+
+
