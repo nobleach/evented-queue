@@ -4,7 +4,7 @@
   "description": "An evented queue implementation that fires events when an item is enqueued or dequeued",
   "main": "app.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "mocha -R spec"
   },
   "repository": {
     "type": "git",

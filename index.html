@@ -6,5 +6,15 @@
 </head>
 <body>
   <script src="evented-queue.js"></script>
+  <script>
+    var myEventedQueue = new EventedQueue();
+    console.log(myEventedQueue);
+    myEventedQueue.addEventListener('itemenqueued', function() {
+      console.log('got it!');
+    }, false); 
+    var item = 'She said howdy, I said hi.';
+    myEventedQueue.enqueue(item);
+
+  </script>
 </body>
 </html>
