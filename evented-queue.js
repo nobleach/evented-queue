@@ -42,11 +42,14 @@ EventedQueue.prototype.enqueue = function(item) {
 }
 
 EventedQueue.prototype.dequeue = function() {
-  return this._dataStore.shift();
   //fire itemdequeued event
+  var slice = this._dataStore.shift();
+  this.dispatchEvent('itemdequeued');
   if(this._dataStore.length === 0) {
     //fire queueemptied event
+    this.dispatchEvent('queueemptied');
   }
+  return slice;
 }
 
 module.exports = EventedQueue;

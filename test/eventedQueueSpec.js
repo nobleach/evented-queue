@@ -1,17 +1,13 @@
 var expect = require('chai').expect;
 var EventedQueue = require('../evented-queue.js');
-var myEventedQueue;
-
-beforeEach(function() {
-  // console.log(EventedQueue);
-});
+var myEventedQueue = new EventedQueue();
+var item = 'Lionel Ritchie Albums';
+var called = false;
+var empty = false;
 
 describe('EventQueue', function() {
-
-  myEventedQueue = new EventedQueue();
+  
   describe('Adding Items', function() {
-    var item = 'Socks';
-    var called = false;
     myEventedQueue.addEventListener('itemenqueued', function() {
       called = true; 
     }, false);
@@ -23,6 +19,30 @@ describe('EventQueue', function() {
     });
 
   });
+
+  describe('Removing Items', function() {
+
+    myEventedQueue.addEventListener('itemdequeued', function() {
+      called = true;  
+    });
+
+    myEventedQueue.addEventListener('queueemptied', function() {
+      empty = true;
+    });
+
+    var removedItem = myEventedQueue.dequeue();
+    it('Should dequeue and return an item', function() {
+      expect(removedItem).to.equal(item);
+    });
+
+    it('Should emit an itemdequeued even from the EventedQueue', function() {
+      expect(called).to.equal(true);
+    });
+
+    it('Should emit a queueemptied event when the queue no longer has any items left', function() {
+      expect(empty).to.equal(true);
+    });
+  }); 
 });
 
 
