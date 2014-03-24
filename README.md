@@ -36,6 +36,15 @@ You can dequeue an item using
 
     var myItem = myEventedQueue.dequeue();
 
+## Checking if an EventedQueue is empty
+
+EventedQueues have a convenience method to check if the queue is empty:
+
+    var item = "hello, is it me you're looking for?";
+    var lionelsQueue = new EventedQueue();
+    lionelsQueue.empty();
+     //returns false
+
 ## Events fired when enqueing and dequeueing items
 
 Here's where the fun begins. Perhaps you want to fire an event every time an item is added to the queue. Simply attach an event listner to the EventedQueue's "itemenqueued" event
