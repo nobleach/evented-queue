@@ -38,7 +38,7 @@ You can dequeue an item using
 
 ## Checking if an EventedQueue is empty
 
-EventedQueues have a convenience method to check if the queue is empty:
+EventedQueue has a convenience method to check if the queue is empty:
 
     var item = "hello, is it me you're looking for?";
     var lionelsQueue = new EventedQueue();
