@@ -9,9 +9,9 @@ I wanted to build a system that would emit an event whenever a an item was enque
 
 When an item is enqueued, a "itemenqueued" event is emitted. Any listners are informed and can fire an event as a result. The same is true for dequeueing of items. An "itemdequeued" event is fired. (although I don't see this being used as much). A "queueemptied" event can alert listeners when the queue has no more items.
 
-##Adding items to the queue
+##Adding items to the EventedQueue
 
-Right now, the Event-queue system is extremely simple. Just add the script to your page and instantiate an instance of EventedQueue:
+Right now, the EventedQueue system is extremely simple. Just add the script to your page and instantiate an instance of EventedQueue:
 
     var myEventedQueue = new EventedQueue();
 
@@ -29,7 +29,7 @@ If you have an existing array of items you'd like to enqueue, you can use
     
 **Note:** These items will be appended to the end of an existing queue using the Javascript Array.splice method. They will be queued in the order that they are specified in the existing array.
 
-##Removing items from the queue
+##Removing items from an EventedQueue
 Queues are read from left to right. The left is known as the head. The right is known as the tail. Dequeueing an item from a queue means removing the item from the first position or head of the queue.
 
 You can dequeue an item using
