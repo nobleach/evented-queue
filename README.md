@@ -41,3 +41,11 @@ You can dequeue an item using
 
 Here's where the fun begins. Perhaps you want to fire an event every time an item is added to the queue. Simply attach an event listner to the EventedQueue's "itemenqueued" event:
     myEventedQueue.addEventListener('itemenqueued', function () { ... }, false);
+
+Currently no additional information is returned.
+
+To attach and event any time an item is dequeued, the process is similar:
+
+    myEventedQueue.addEventListener('itemdequeued', function () { ... }, false);
+
+If dequeueing items leads to an empty queue, EventedQueue emits a 'queueemptied' event.
