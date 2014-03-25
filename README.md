@@ -75,6 +75,6 @@ Naturally, there are times when one will want to add items in bulk. Emitting an 
     ];
     
     var lionelsQueue = new EventedQueue();
-    lioneleQueue.enqueueMultiple(lionelsQueue);
+    lioneleQueue.enqueueMultiple(lionelsHits);
 
 This will emit a single event, yet add multiple items.
