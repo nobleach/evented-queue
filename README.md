@@ -63,4 +63,18 @@ If dequeueing items leads to an empty queue, EventedQueue emits a 'queueemptied'
       console.log('Yay! our work here is done!'); 
     }, false);
 
+## Adding multiple items
 
+Naturally, there are times when one will want to add items in bulk. Emitting an event for 400 items, for example, might be overkill. For this reason, EventedQueue has an **enqueueMultiple** method which takes an array and adds its items at one time. It emits one event. This is the preferred method if a large amount of items will be added - or if an unknown number of items will be added.
+
+    var lionelsHits = [
+      'Dancing on the Ceiling',
+      'Ballerina Girl',
+      'Running With The Night',
+      'All Night Long'
+    ];
+    
+    var lionelsQueue = new EventedQueue();
+    lioneleQueue.enqueueMultipe(lionelsQueue);
+
+This will emit a single event, yet add multiple items.

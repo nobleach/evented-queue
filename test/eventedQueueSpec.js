@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var EventedQueue = require('../evented-queue.js');
 var myEventedQueue = new EventedQueue();
-var item = 'Lionel Ritchie Albums';
+var item = 'Lionel Richie Albums';
 var called = false;
 var empty = false;
 
