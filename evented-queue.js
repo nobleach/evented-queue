@@ -41,6 +41,11 @@ EventedQueue.prototype.enqueue = function(item) {
   this.dispatchEvent('itemenqueued');
 }
 
+EventedQueue.prototype.enqueueMultiple = function(items) {
+  this._dataStore.splice(this._dataStore.length, 0, items);
+  this.dispatchEvent('itemenqueued');
+}
+
 EventedQueue.prototype.dequeue = function() {
   //fire itemdequeued event
   var slice = this._dataStore.shift();

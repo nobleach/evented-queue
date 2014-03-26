@@ -43,6 +43,26 @@ describe('EventQueue', function() {
       expect(empty).to.equal(true);
     });
   }); 
+
+  describe('Adding Multiple Items', function() {
+
+    myEventedQueue.addEventListener('itemenqueued', function() {
+      called = true;
+    });
+
+    var items = [
+      'Ballerina Girl',
+      'Hello',
+      'Dancing on the Ceiling'
+    ];
+
+    myEventedQueue.enqueueMultiple(items);
+
+    it('Should emit a single itemenqueued event from the EventedQueue.', function() {
+      expect(called).to.equal(true);
+    });
+
+  });
 });
 
 
