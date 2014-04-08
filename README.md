@@ -9,6 +9,16 @@ I wanted to build a system that would emit an event whenever a an item was enque
 
 When an item is enqueued, a "itemenqueued" event is emitted. Any listners are informed and can fire an event as a result. The same is true for dequeueing of items. An "itemdequeued" event is fired. (although I don't see this being used as much). A "queueemptied" event can alert listeners when the queue has no more items.
 
+##Installation
+
+You can install EventedQueue via npm:
+
+    npm install EventedQueue
+
+Add it to your project by including it:
+
+    var EventedQueue = require('../evented-queue.js');
+
 ##Adding items to an EventedQueue
 
 Right now, the EventedQueue system is extremely simple. Just add the script to your page and instantiate an instance of EventedQueue:
@@ -78,3 +88,15 @@ Naturally, there are times when one will want to add items in bulk. Emitting an 
     lioneleQueue.enqueueMultiple(lionelsHits);
 
 This will emit a single event, yet add multiple items.
+
+##Clearing an EventedQueue
+
+To clear all items from a queue without firing an event:
+
+    myEventQueue.clear();
+
+##Checking whether an EventedQueue is empty
+
+Although an EventedQueue will emit an event when the queue is empty, a convenience method exists just in case:
+
+    myEventedQueue.empty(); //true

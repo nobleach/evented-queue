@@ -57,5 +57,13 @@ EventedQueue.prototype.dequeue = function() {
   return slice;
 }
 
+EventedQueue.prototype.clear = function() {
+  this._dataStore.length = 0;
+}
+
+EventedQueue.prototype.empty = function() {
+  return this._dataStore.length === 0;
+}
+
 module.exports = EventedQueue;
 

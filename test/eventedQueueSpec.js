@@ -63,6 +63,29 @@ describe('EventQueue', function() {
     });
 
   });
+
+  describe('Clearing a queue and checking whether it is empty', function() {
+
+    var hitsWithoutLionel = [
+      'Easy Like a Sunay Morning',
+      'Sail On',
+      'Night Shift'
+    ];
+
+    myEventedQueue.enqueueMultiple(hitsWithoutLionel);
+
+    it('Should contain items before the queue is cleared', function() {
+      expect(myEventedQueue.empty()).to.equal(false);
+    });
+
+    it('Should be empty after it is cleared', function() {
+      myEventedQueue.clear();
+      expect(myEventedQueue.empty()).to.equal(true);
+    });
+
+
+  });
+  
 });
 
 
